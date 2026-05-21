@@ -1,0 +1,204 @@
+{
+  "name": "pydanticcontract",
+  "title": "Pydantic Contract",
+  "description": "A paid remote MCP for Pydantic AI structured output, built to return verdicts, receipts, usage logs, and audit-ready JSON for agent and CI workflows.",
+  "version": "1.0.0",
+  "websiteUrl": "https://pydanticcontract.clauxel.com/",
+  "documentationUrl": "https://pydanticcontract.clauxel.com/mcp/",
+  "endpointUrl": "https://pydanticcontract.clauxel.com/mcp",
+  "transport": "streamable-http",
+  "authentication": {
+    "type": "bearer",
+    "required": true,
+    "header": "Authorization",
+    "format": "Bearer <paid-token>"
+  },
+  "paidAccess": {
+    "required": true,
+    "checkoutUrl": "https://pydanticcontract.clauxel.com/api/agent-checkout",
+    "tokenStatusUrl": "https://pydanticcontract.clauxel.com/api/mcp-token/status",
+    "tokenClaimUrl": "https://pydanticcontract.clauxel.com/api/mcp-token/claim",
+    "defaultPlan": "team",
+    "pricing": [
+      {
+        "id": "dev",
+        "name": "Dev",
+        "monthlyUsd": 19
+      },
+      {
+        "id": "team",
+        "name": "Team",
+        "monthlyUsd": 69
+      },
+      {
+        "id": "pro",
+        "name": "Pro",
+        "monthlyUsd": 169
+      }
+    ]
+  },
+  "tools": [
+    {
+      "name": "contract_validate",
+      "description": "Pydantic Contract contract validate",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "sample": {
+            "type": "string",
+            "description": "Workflow sample, schema, policy fixture, or agent output."
+          },
+          "context": {
+            "type": "string",
+            "description": "Optional review context."
+          }
+        },
+        "required": [
+          "sample"
+        ]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "verdict": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "receipt_id": {
+            "type": "string"
+          },
+          "usage_units": {
+            "type": "integer"
+          },
+          "next_action": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "schema_diff",
+      "description": "Pydantic Contract schema diff",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "sample": {
+            "type": "string",
+            "description": "Workflow sample, schema, policy fixture, or agent output."
+          },
+          "context": {
+            "type": "string",
+            "description": "Optional review context."
+          }
+        },
+        "required": [
+          "sample"
+        ]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "verdict": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "receipt_id": {
+            "type": "string"
+          },
+          "usage_units": {
+            "type": "integer"
+          },
+          "next_action": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "repair_hint",
+      "description": "Pydantic Contract repair hint",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "sample": {
+            "type": "string",
+            "description": "Workflow sample, schema, policy fixture, or agent output."
+          },
+          "context": {
+            "type": "string",
+            "description": "Optional review context."
+          }
+        },
+        "required": [
+          "sample"
+        ]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "verdict": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "receipt_id": {
+            "type": "string"
+          },
+          "usage_units": {
+            "type": "integer"
+          },
+          "next_action": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "contract_receipt",
+      "description": "Pydantic Contract contract receipt",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "sample": {
+            "type": "string",
+            "description": "Workflow sample, schema, policy fixture, or agent output."
+          },
+          "context": {
+            "type": "string",
+            "description": "Optional review context."
+          }
+        },
+        "required": [
+          "sample"
+        ]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "verdict": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "receipt_id": {
+            "type": "string"
+          },
+          "usage_units": {
+            "type": "integer"
+          },
+          "next_action": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "inputOutputSummary": "Each tool accepts structured workflow evidence and returns verdict, reason, receipt_id, usage_units, and next_action JSON.",
+  "supportEmail": "support@aigeamy.com"
+}
