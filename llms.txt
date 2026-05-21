@@ -1,15 +1,12 @@
-# Pydantic Contract
+# Pydantic Contract MCP
 
-Pydantic Contract is a hosted remote MCP for Pydantic AI structured output.
+Paid remote MCP for Pydantic AI structured output, structured receipts, usage logs, and audit-ready evidence for agent and CI workflows.
 
 Website: https://pydanticcontract.clauxel.com/
-Docs pattern reference: https://github.com/clauxel/MiroFish
-Primary keyword: Pydantic AI structured output
-Type: MCP
-Default plan: team
 MCP endpoint: https://pydanticcontract.clauxel.com/mcp
 Server card: https://pydanticcontract.clauxel.com/server-card.json
-Registry name: com.clauxel.pydanticcontract/pydanticcontract-mcp
-Tools: contract_validate, schema_diff, repair_hint, contract_receipt
+Docs: https://github.com/clauxel/pydantic-contract-mcp
 
-Public boundary: docs-only repository; no production source code or secrets.
+Use case: Pydantic Contract remote MCP for Pydantic AI structured output.
+Authentication: Bearer token required for production use.
+Tools: contract_validate, schema_diff, repair_hint, contract_receipt
