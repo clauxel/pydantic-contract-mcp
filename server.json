@@ -1,13 +1,11 @@
 {
-  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "com.clauxel.pydanticcontract/pydanticcontract-mcp",
-  "description": "Pydantic Contract is a hosted remote MCP for Pydantic AI structured output.",
+  "title": "Pydantic Contract MCP",
+  "description": "Paid remote MCP for Pydantic AI structured output, structured receipts, usage logs, and audit-ready evidence for agent and CI workflows.",
   "version": "1.0.0",
-  "website_url": "https://pydanticcontract.clauxel.com/",
-  "repository": {
-    "url": "https://github.com/clauxel/pydantic-contract-mcp",
-    "source": "github"
-  },
+  "websiteUrl": "https://pydanticcontract.clauxel.com/",
+  "documentationUrl": "https://github.com/clauxel/pydantic-contract-mcp",
+  "serverCardUrl": "https://pydanticcontract.clauxel.com/server-card.json",
   "remotes": [
     {
       "type": "streamable-http",
@@ -15,17 +13,16 @@
       "headers": [
         {
           "name": "Authorization",
-          "description": "Bearer token from the product website.",
-          "is_required": true,
-          "is_secret": true
+          "description": "Bearer token from the product website."
         }
       ]
     }
   ],
-  "_meta": {
-    "io.modelcontextprotocol.registry/publisher-provided": {
-      "title": "Pydantic Contract MCP",
-      "server_card_url": "https://pydanticcontract.clauxel.com/server-card.json"
-    }
-  }
+  "tags": [
+    "pydantic",
+    "ai",
+    "structured",
+    "output",
+    "remote-mcp"
+  ]
 }
